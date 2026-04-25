@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Limelite X2 — Display Backpack | 4K Display, Streaming, Built-in Speakers</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- GSAP & Lenis for Smooth Scrolling and Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#bbaa7c",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed-dim": "#c2c4e5",
+                        "on-tertiary-container": "#4a3e1a",
+                        "tertiary-fixed": "#f4e1af",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-fixed-dim": "#e4c451",
+                        "on-surface": "#191c1d",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#5a5c79",
+                        "error": "#ba1a1a",
+                        "primary": "#ef4444",
+                        "primary-fixed": "#dfe0ff",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#46464d",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed": "#ffe17a",
+                        "on-primary-fixed": "#161a32",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed": "#231b00",
+                        "secondary": "#715c00",
+                        "on-tertiary-fixed-variant": "#524621",
+                        "inverse-primary": "#c2c4e5",
+                        "outline": "#77767e",
+                        "tertiary": "#6b5d36",
+                        "surface-container": "#edeeef",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadb",
+                        "outline-variant": "#c7c5ce",
+                        "tertiary-fixed-dim": "#d7c595",
+                        "on-background": "#191c1d",
+                        "on-secondary-fixed-variant": "#554500",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#ef4444",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "primary-container": "#7f1d1d",
+                        "on-primary-fixed-variant": "#424560",
+                        "on-primary-container": "#aaaccc",
+                        "on-secondary-container": "#766100",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed": "#231b00",
+                        navy: '#1e293b',
+                        yellow: '#ef4444',
+                        dark: '#111827',
+                        gray: '#6B7280',
+                        lightgray: '#F3F4F6'
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "section-padding": "80px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "button": ["Lexend"],
+                        "headline-lg": ["Lexend"],
+                        "body-lg": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "label-bold": ["Lexend"],
+                        "display-xl": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "label-bold": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-xl": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+
+    <!-- Full-screen Navigation Menu -->
+    <div id="side-menu" class="fixed inset-0 z-[100] bg-black flex translate-x-full overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 flex items-center justify-end bg-black">
+            <!-- Mobile Image -->
+            <img src="./People-3.jpeg" class="md:hidden w-full h-full object-cover object-top opacity-100" alt="Background Mobile">
+            <!-- Desktop Image -->
+            <img src="./3-people.jpeg" class="hidden md:block w-full h-full object-cover object-top opacity-100" alt="Background Desktop">
+            
+            <!-- Responsive Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/20 md:from-black/90 via-transparent md:via-black/40 to-transparent"></div>
+        </div>
+        <!-- Close Button -->
+        <button id="close-menu"
+            class="absolute top-8 right-8 md:top-12 md:right-12 w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-yellow hover:text-white hover:border-yellow transition-all duration-500 ease-out z-[110] group">
+            <span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-500 ease-out">close</span>
+        </button>
+
+        <!-- Left Side: Nav Links -->
+        <div class="w-full lg:w-3/5 h-full flex flex-col justify-center px-8 md:px-24 py-12 relative z-10 bg-transparent">
+
+            <nav class="flex flex-col space-y-1 md:space-y-2">
+                <!-- Home -->
+                <a href="work.html" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">01</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Home</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-0.5 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">Back
+                            to start</span>
+                    </div>
+                </a>
+
+                <!-- Our Story -->
+                <a href="work.html#story-section" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">02</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Our
+                            Story</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">The
+                            Limelite Journey</span>
+                    </div>
+                </a>
+
+                <!-- How to Use -->
+                <a href="work.html#faq-section" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">03</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">How
+                            to Use</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">Master
+                            your display</span>
+                    </div>
+                </a>
+
+                <!-- Why Limelite -->
+                <a href="work.html#reels-section" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">04</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Why
+                            Limelite</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">The
+                            Wearable Advantage</span>
+                    </div>
+                </a>
+
+                <!-- Affiliate -->
+                <a href="#" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">05</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Affiliate</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">Join
+                            our network</span>
+                    </div>
+                </a>
+
+                <!-- Reviews -->
+                <a href="work.html#testimonials-section"
+                    class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">06</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Reviews</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">What
+                            they say</span>
+                    </div>
+                </a>
+            </nav>
+
+            <!-- Bottom Socials -->
+            <div class="mt-12 flex items-center space-x-8 opacity-0 translate-y-10" id="menu-footer">
+                <div class="flex space-x-5">
+                    <a href="#" class="text-white/60 hover:text-yellow transition-colors"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white/60 hover:text-yellow transition-colors"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white/60 hover:text-yellow transition-colors"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="h-px w-12 bg-white/10"></div>
+                <p class="text-white/30 text-[10px] uppercase tracking-widest">© 2024 Limelite Studio</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Decorative/Image (Desktop Only) -->
+        <div class="hidden lg:block w-2/5 h-full relative overflow-hidden bg-transparent">
+            <div class="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent z-10"></div>
+        </div>
+
+            <!-- Animated Grid Pattern Overlay -->
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 40px 40px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Navigation -->
+    <div class="fixed top-0 w-full z-50 pt-6 px-6 transition-all duration-500 pointer-events-none" id="navbar-wrapper">
+        <nav class="mx-auto max-w-3xl bg-white/70 backdrop-blur-3xl border border-white/50 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] rounded-2xl md:rounded-full px-6 md:px-8 py-2 flex items-center justify-between pointer-events-auto transition-all duration-500 will-change-transform"
+            id="navbar">
+            <!-- Left: Menu Bar -->
+            <div class="flex-1 flex items-center">
+                <button id="menu-toggle"
+                    class="w-11 h-11 rounded-full border border-gray/10 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all duration-500 ease-out group">
+                    <span
+                        class="material-symbols-outlined text-[24px] group-hover:rotate-90 transition-transform duration-500 ease-out">menu</span>
+                </button>
+            </div>
+
+            <!-- Mid: Brand Logo -->
+            <div class="flex-1 flex justify-center">
+                <a class="text-2xl font-black text-navy tracking-tighter hover:opacity-80 transition-opacity font-['Lexend']"
+                    href="work.html">LIMELITE</a>
+            </div>
+
+            <!-- Right: Icons -->
+            <div class="flex-1 flex items-center justify-end space-x-4">
+                <a href="#"
+                    class="w-11 h-11 rounded-full border border-gray/10 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all duration-500 ease-out group">
+                    <span
+                        class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform duration-500 ease-out">person</span>
+                </a>
+                <a href="#"
+                    class="w-11 h-11 rounded-full border border-gray/10 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all duration-500 ease-out group relative">
+                    <span
+                        class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform duration-500 ease-out">shopping_cart</span>
+                    <span
+                        class="absolute -top-1 -right-1 w-5 h-5 bg-yellow text-white text-[10px] font-bold flex items-center justify-center rounded-full border-2 border-white shadow-sm">0</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+  <!-- ===== PRODUCT HERO (PDP) ===== -->
+  <section class="section pdp bg-surface text-on-background font-body-md" id="product">
+    <div class="container">
+      <div class="pdp__wrap">
+        <!-- Gallery -->
+        <div class="pdp__gallery rv">
+          <div class="pdp__main-img" id="main-img">
+            <div class="glow"></div>
+            <img src="pixler-3.png" alt="Pixler 3 Compact Display Backpack" id="main-img-el" fetchpriority="high">
+          </div>
+          <div class="pdp__thumbs" id="thumbs">
+            <div class="pdp__thumb active" data-img="pixler-3.png"><img loading="lazy" src="pixler-3.png"
+                alt="Front view"></div>
+            <div class="pdp__thumb" data-img="new-hero-2.webp"><img loading="lazy" src="new-hero-2.webp"
+                alt="Side view"></div>
+            <div class="pdp__thumb" data-img="new-hero-4.webp"><img loading="lazy" src="new-hero-4.webp"
+                alt="Studio shot"></div>
+            <div class="pdp__thumb" data-img="new-hero-3.webp"><img loading="lazy" src="new-hero-3.webp"
+                alt="Yoga display"></div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="pdp__info rv">
+          <div class="pdp__badge"><span class="pdp__badge-dot"></span>Now Available — Limited Stock</div>
+          <h1 class="pdp__title font-black text-navy tracking-tighter font-['Lexend']">Pixler 3<br><span class="text-primary italic">Pocket</span> Bag</h1>
+          <p class="pdp__subtitle">The ultimate compact companion. A streamlined, lightweight version of the Limelite series, perfect for those who want impact without the bulk.</p>
+
+          <div class="pdp__price-row">
+            <span class="pdp__price">$349.00</span>
+            <span class="pdp__price-old">$449.00</span>
+            <span class="pdp__price-save">Save $100.00</span>
+          </div>
+          <p class="pdp__price-note">One-time purchase · Free shipping · No subscriptions</p>
+
+          <a href="#buy" class="btn-buy" id="pdp-buy">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 01-8 0" />
+            </svg>
+            Add to Cart
+          </a>
+          <!-- Win Your Money Back Accordion -->
+          <div class="promo-accordion qa-toggle" id="promo-moneyback">
+            <div class="promo-accordion__head">
+              <span class="promo-accordion__title">Win Your Money Back</span>
+              <span class="promo-accordion__icon">+</span>
+            </div>
+            <div class="promo-accordion__body">
+              <div class="promo-accordion__content">
+                <p><strong>How to win your money back?</strong></p>
+                <ol>
+                  <li>Purchase a Pixler 3 backpack</li>
+                  <li>Post a photo or video wearing your bag on Instagram</li>
+                  <li>Tag @MyLimelite in your post</li>
+                </ol>
+                <p><strong>Pixler 3:</strong> Get a minimum of 5k views and 25 genuine comments within 15 days, you'll
+                  win your money back as a full Limelite purchase credit.</p>
+                <p>To claim, send us a DM at <strong>@MyLimelite</strong> or email Support@mylimelite.com once your post
+                  qualifies. Terms apply.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Trust micro-strip -->
+          <div class="pdp__trust">
+            <div class="pdp__trust-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              Warranty Included
+            </div>
+            <div class="pdp__trust-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+              Fast Shipping
+            </div>
+            <div class="pdp__trust-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Easy Setup
+            </div>
+          </div>
+
+          <!-- Hero Q&A: whisper right in the product info -->
+          <div class="pdp__qa qa-toggle" id="hero-qa">
+            <div class="pdp__qa-head">
+              <span class="pdp__qa-icon">?</span>
+              <span class="pdp__qa-q">Can I customize what shows on the screen?</span>
+            </div>
+            <div class="pdp__qa-a">Yes — display anything from videos to animations directly from your phone. Full
+              control through the companion app.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEY SPECS STRIP ===== -->
+  <div class="specs-strip">
+    <div class="container" style="max-width:1400px;padding:0;">
+      <div class="specs-strip__inner">
+        <div class="spec-item rv">
+          <div class="spec-item__val">HD</div>
+          <div class="spec-item__lbl">IPS Display</div>
+        </div>
+        <div class="spec-item rv">
+          <div class="spec-item__val">10.5"</div>
+          <div class="spec-item__lbl">Screen Size</div>
+        </div>
+        <div class="spec-item rv">
+          <div class="spec-item__val">10+ hrs</div>
+          <div class="spec-item__lbl">Battery Life</div>
+        </div>
+        <div class="spec-item rv">
+          <div class="spec-item__val">1.8 kg</div>
+          <div class="spec-item__lbl">Ultralight</div>
+        </div>
+        <div class="spec-item rv">
+          <div class="spec-item__val">IPX4</div>
+          <div class="spec-item__lbl">Water Resistant</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== REELS SECTION ===== -->
+  <section class="section" id="reels" style="padding-top:100px;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;" class="rv">
+        <span class="sec-label">In Action</span>
+        <h2 class="sec-title reel-header-title">See the Pixler on the <span class="text-primary italic">Streets</span></h2>
+        <p class="sec-sub" style="margin:0 auto;">Watch how creators are using the Pixler 3 to stand out.</p>
+      </div>
+      <div class="reels-grid">
+        <!-- Reel 1 -->
+        <div class="reel-card rv">
+           <img src="reel-1.png?v=2" alt="Creative director with backpack" class="reel-card__img" loading="lazy">
+           <div class="reel-card__overlay"></div>
+           <button class="reel-card__play" aria-label="Play Reel">
+             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+           </button>
+           <div class="reel-card__info">
+             <div class="reel-card__stat">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+               1.2M
+             </div>
+           </div>
+        </div>
+        <!-- Reel 2 -->
+        <div class="reel-card rv">
+           <img src="reel-2.png?v=2" alt="Tech entrepreneur at cafe" class="reel-card__img" loading="lazy">
+           <div class="reel-card__overlay"></div>
+           <button class="reel-card__play" aria-label="Play Reel">
+             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+           </button>
+           <div class="reel-card__info">
+             <div class="reel-card__stat">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+               850K
+             </div>
+           </div>
+        </div>
+        <!-- Reel 3 -->
+        <div class="reel-card rv">
+           <img src="reel-3.png?v=2" alt="Professional man walking" class="reel-card__img" loading="lazy">
+           <div class="reel-card__overlay"></div>
+           <button class="reel-card__play" aria-label="Play Reel">
+             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+           </button>
+           <div class="reel-card__info">
+             <div class="reel-card__stat">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+               425K
+             </div>
+           </div>
+        </div>
+        <!-- Reel 4 -->
+        <div class="reel-card rv">
+           <img src="reel-4.png?v=2" alt="Digital nomad at airport" class="reel-card__img" loading="lazy">
+           <div class="reel-card__overlay"></div>
+           <button class="reel-card__play" aria-label="Play Reel">
+             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+           </button>
+           <div class="reel-card__info">
+             <div class="reel-card__stat">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+               2.1M
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE 1: DISPLAY + TECH SETUP Q&A ===== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="feat-row" data-default-img="pixler-3.png">
+        <div class="feat-row__img rv">
+          <img loading="lazy" src="pixler-3.png" alt="Pixler 3 display technology"
+            class="feat-row__img-el">
+          <img loading="lazy" src="" alt="" class="feat-row__img-swap" aria-hidden="true">
+          <div class="overlay-glow"></div>
+        </div>
+        <div class="feat-row__text rv">
+          <span class="sec-label">Display &amp; Connectivity</span>
+          <h2 class="sec-title">Vibrant HD.<br><span class="text-primary italic">Seamless</span> Sync.</h2>
+          <p class="sec-sub">A high-definition IPS display optimized for outdoor visibility. Sync your animations in seconds using the Limelite mobile app.</p>
+
+          <!-- 🎯 Tech Setup Q&A -->
+          <div class="whisper qa-toggle" id="qa-connect" data-swap-img="qa-phone-connect.webp">
+            <span class="whisper__icon">?</span>
+            <div>
+              <div class="whisper__q">Is it easy to use for beginners?</div>
+              <div class="whisper__a">Absolutely. If you can use Instagram, you can use the Pixler 3. Just connect via Bluetooth and upload.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE 2: MEDIA CAPABILITY + Q&A ===== -->
+  <section class="section" id="media">
+    <div class="container">
+      <div class="feat-row feat-row--reverse" data-default-img="lifestyle-urban.webp">
+        <div class="feat-row__img rv">
+          <img loading="lazy" src="lifestyle-urban.webp" alt="Pixler 3 in urban environment"
+            class="feat-row__img-el">
+          <img loading="lazy" src="" alt="" class="feat-row__img-swap" aria-hidden="true">
+          <div class="overlay-glow"></div>
+        </div>
+        <div class="feat-row__text rv">
+          <span class="sec-label">Social Ready</span>
+          <h2 class="sec-title">Made for<br><span class="text-primary italic">Creators.</span></h2>
+          <p class="sec-sub">The Pixler 3 is designed for social impact. Lightweight enough for all-day wear, bright enough to turn heads in any lighting.</p>
+
+          <!-- 🎯 Media Capability Q&A -->
+          <div class="whisper qa-toggle" id="qa-video" data-swap-img="hero-dark.webp">
+            <span class="whisper__icon">?</span>
+            <div>
+              <div class="whisper__q">Can it show my social media handle?</div>
+              <div class="whisper__a">Yes! Display your QR code, handle, or latest post directly on the bag.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURE 3: BUILD + DURABILITY Q&A ===== -->
+  <section class="section" id="build">
+    <div class="container">
+      <div class="feat-row" data-default-img="detail-materials.webp">
+        <div class="feat-row__img rv">
+          <img loading="lazy" src="detail-materials.webp" alt="Pixler 3 materials"
+            class="feat-row__img-el">
+          <img loading="lazy" src="" alt="" class="feat-row__img-swap" aria-hidden="true">
+          <div class="overlay-glow"></div>
+        </div>
+        <div class="feat-row__text rv">
+          <span class="sec-label">Featherlight Build</span>
+          <h2 class="sec-title">Impact.<br><span class="text-primary italic">Without Weight.</span></h2>
+          <p class="sec-sub">At just 1.8 kg, the Pixler 3 is our lightest display bag ever. Premium weather-resistant fabrics protect your tech from the elements.</p>
+
+          <!-- 🎯 Durability Q&A -->
+          <div class="whisper whisper--purple qa-toggle" id="qa-safe" data-swap-img="hero-backpack.webp">
+            <span class="whisper__icon">?</span>
+            <div>
+              <div class="whisper__q">Is it waterproof?</div>
+              <div class="whisper__a">It's IPX4 water-resistant, meaning it handles rain and splashes with ease.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT'S IN THE BOX ===== -->
+  <section class="section inbox" id="box">
+    <div class="container">
+      <div style="text-align:center;" class="rv">
+        <span class="sec-label">Package</span>
+        <h2 class="sec-title">What's in the Box</h2>
+        <p class="sec-sub" style="margin:0 auto;">Everything you need to get started.</p>
+      </div>
+      <div class="inbox__grid">
+        <div class="inbox-item rv">
+          <div class="inbox-item__icon">🎒</div>
+          <div class="inbox-item__name">Pixler 3 Backpack</div>
+          <div class="inbox-item__desc">With integrated 10.5" HD LED display</div>
+        </div>
+        <div class="inbox-item rv">
+          <div class="inbox-item__icon">🔌</div>
+          <div class="inbox-item__name">USB Cable</div>
+          <div class="inbox-item__desc">Power connection cable included</div>
+        </div>
+        <div class="inbox-item rv">
+          <div class="inbox-item__icon">📖</div>
+          <div class="inbox-item__name">Setup Guide</div>
+          <div class="inbox-item__desc">Get started in minutes</div>
+        </div>
+        <div class="inbox-item rv">
+          <div class="inbox-item__icon">📦</div>
+          <div class="inbox-item__name">Collector Box</div>
+          <div class="inbox-item__desc">Premium branded packaging</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="reviews-wrap">
+        <div class="reviews-summary rv">
+          <h2 class="sec-title" style="margin-bottom:8px; font-size:1.8rem;">Customer Reviews</h2>
+          <div class="reviews-summary__flex">
+            <div class="reviews-summary__score">4.8</div>
+            <div>
+              <div class="reviews-summary__stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              </div>
+              <div class="reviews-summary__count">84 global ratings</div>
+            </div>
+          </div>
+          <div class="reviews-bars">
+            <div class="reviews-bar"><span>5 star</span><div class="bar-bg"><div class="bar-fill" style="width:85%"></div></div><span>85%</span></div>
+            <div class="reviews-bar"><span>4 star</span><div class="bar-bg"><div class="bar-fill" style="width:10%"></div></div><span>10%</span></div>
+            <div class="reviews-bar"><span>3 star</span><div class="bar-bg"><div class="bar-fill" style="width:5%"></div></div><span>5%</span></div>
+          </div>
+        </div>
+
+        <div class="reviews-list">
+          <!-- Review 1 -->
+          <div class="review-pro rv">
+            <div class="review-pro__header">
+              <div class="review-pro__avatar">MA</div>
+              <div class="review-pro__meta">
+                <div class="review-pro__name">Marcus A.</div>
+                <div class="review-pro__verified"><svg viewBox="0 0 24 24"><polygon points="20 6 9 17 4 12" fill="currentColor"/></svg> Verified Purchase</div>
+              </div>
+            </div>
+            <div class="review-pro__title-row">
+              <div class="review-pro__stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              </div>
+              <h4 class="review-pro__title">Best travel bag I've owned.</h4>
+            </div>
+            <div class="review-pro__date">Reviewed in USA on January 15, 2026</div>
+            <div class="review-pro__body">
+              <p>I wanted the tech of the X2 but in a smaller frame for my daily city walks. The Pixler 3 is perfect. It fits my 13" laptop and still has room for my camera. The screen is clear and the app makes changing designs a breeze.</p>
+            </div>
+            <button class="review-pro__helpful">Helpful (42)</button>
+          </div>
+          <button id="load-more-reviews" class="btn-load-more">View More Reviews</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-navy text-white pt-20 pb-10 font-['Poppins']">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <h3 class="text-2xl font-black text-white mb-6 tracking-tighter font-['Lexend']">LIMELITE</h3>
+                <p class="text-white/60 text-sm leading-relaxed mb-8">
+                    The future of wearable advertising. Empowering brands to shine in the physical world.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-navy transition-all duration-500 ease-out"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-navy transition-all duration-500 ease-out"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-navy transition-all duration-500 ease-out"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-8">Shop</h4>
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="text-white/60 text-sm hover:text-primary transition-colors">X2 Backpack</a></li>
+                    <li><a href="index2.html" class="text-white/60 text-sm hover:text-primary transition-colors">Pixler 3</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-8">Company</h4>
+                <ul class="space-y-4">
+                    <li><a href="work.html#story-section" class="text-white/60 text-sm hover:text-primary transition-colors">Our Story</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-8">Support</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-white/60 text-sm hover:text-primary transition-colors">Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-white/10 flex justify-between items-center">
+            <p class="text-white/40 text-xs">© 2024 Limelite. All rights reserved.</p>
+        </div>
+    </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Menu Logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const sideMenu = document.getElementById('side-menu');
+    const menuLinks = document.querySelectorAll('.menu-link');
+    const menuTL = gsap.timeline({ paused: true });
+    menuTL.to(sideMenu, { x: 0, duration: 0.9, ease: "expo.inOut" }).fromTo(menuLinks, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.06, ease: "power4.out" }, "-=0.5");
+    menuToggle.addEventListener('click', () => { menuTL.play(); lenis.stop(); });
+    closeMenu.addEventListener('click', () => { menuTL.reverse(); lenis.start(); });
+    menuLinks.forEach(link => { link.addEventListener('click', () => { menuTL.reverse(); lenis.start(); }); });
+
+    // Navbar Scroll
+    const navbar = document.getElementById('navbar');
+    const navbarWrapper = document.getElementById('navbar-wrapper');
+    lenis.on('scroll', ({ scroll }) => {
+        if (scroll > 50) { navbar.classList.add('py-1.5', 'bg-white/80', 'backdrop-blur-3xl', 'shadow-2xl'); navbarWrapper.classList.add('pt-2'); }
+        else { navbar.classList.remove('py-1.5', 'bg-white/80', 'backdrop-blur-3xl', 'shadow-2xl'); navbarWrapper.classList.remove('pt-2'); }
+    });
+
+    // Gallery logic with cache
+    const mainImg = document.getElementById('main-img-el');
+    const thumbs = document.querySelectorAll('.pdp__thumb');
+    let autoPlayInterval;
+    let currentThumbIndex = 0;
+    const galleryCache = {};
+    thumbs.forEach(t => { const src = t.dataset.img; const img = new Image(); img.src = src; galleryCache[src] = img; });
+
+    function updateGalleryImage(index) {
+      const t = thumbs[index];
+      thumbs.forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      const newSrc = t.dataset.img;
+      mainImg.style.opacity = '0';
+      setTimeout(() => { mainImg.src = newSrc; mainImg.style.opacity = '1'; }, 200);
+      currentThumbIndex = index;
+    }
+    thumbs.forEach((t, i) => { t.addEventListener('click', () => { clearInterval(autoPlayInterval); updateGalleryImage(i); }); });
+    function startAutoPlay() { autoPlayInterval = setInterval(() => { let nextIndex = (currentThumbIndex + 1) % thumbs.length; updateGalleryImage(nextIndex); }, 4000); }
+    startAutoPlay();
+
+    // Q&A Logic with crossfade
+    document.querySelectorAll('.qa-toggle').forEach(el => {
+      const featRow = el.closest('.feat-row');
+      const baseImg = featRow ? featRow.querySelector('.feat-row__img-el') : null;
+      const swapImgEl = featRow ? featRow.querySelector('.feat-row__img-swap') : null;
+      const defaultImg = featRow ? featRow.dataset.defaultImg : null;
+      const swapImgSrc = el.dataset.swapImg;
+
+      const updateImg = (src, isReset = false) => {
+        if (!baseImg || !swapImgEl || !src) return;
+        if (isReset) { swapImgEl.style.opacity = '0'; baseImg.style.opacity = '1'; }
+        else { swapImgEl.src = src; swapImgEl.style.opacity = '1'; baseImg.style.opacity = '0.3'; }
+      };
+
+      el.addEventListener('mouseenter', () => { if (swapImgSrc) updateImg(swapImgSrc); });
+      el.addEventListener('mouseleave', () => { if (!el.classList.contains('on')) updateImg(defaultImg, true); });
+      el.addEventListener('click', () => {
+        el.classList.toggle('on');
+        if (el.classList.contains('on')) { if (swapImgSrc) updateImg(swapImgSrc); }
+        else { updateImg(defaultImg, true); }
+      });
+    });
+  </script>
+</body>
+</html>

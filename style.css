@@ -1,0 +1,124 @@
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.filled {
+    font-variation-settings: 'FILL' 1;
+}
+
+/* ── Spotlight Stage Loader ── */
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: #080808;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Stage floor gradient */
+.stage-floor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(30, 25, 15, 0.4) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Spotlight cone from above */
+.spotlight {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 120%;
+    background: radial-gradient(ellipse at top center,
+            rgba(255, 245, 180, 0.18) 0%,
+            rgba(255, 240, 160, 0.10) 25%,
+            rgba(255, 235, 140, 0.04) 50%,
+            transparent 70%);
+    clip-path: polygon(42% 0%, 58% 0%, 80% 100%, 20% 100%);
+    opacity: 0;
+    filter: blur(2px);
+}
+
+/* Warm circle pool of light on the "floor" */
+.light-pool {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 245, 150, 0.18) 0%, transparent 70%);
+    opacity: 0;
+}
+
+/* Brand text — sitting on the stage */
+.stage-brand {
+    font-family: 'Lexend', sans-serif;
+    font-size: clamp(36px, 7vw, 80px);
+    font-weight: 900;
+    letter-spacing: 0.3em;
+    color: #fff;
+    position: relative;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* Message line — the emotional hook */
+.stage-message {
+    font-family: 'Lexend', sans-serif;
+    font-size: clamp(12px, 1.8vw, 18px);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgba(255, 245, 180, 0.85);
+    margin-top: 16px;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+/* Expanding warm flash for transition */
+.light-flash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 240, 200, 1) 0%, rgba(248, 249, 250, 1) 60%, rgba(248, 249, 250, 1) 100%);
+    opacity: 0;
+    z-index: 10;
+    will-change: transform, opacity;
+}
+
+/* Performance Optimizations */
+.fade-up {
+    will-change: transform, opacity;
+}
+
+img {
+    will-change: transform;
+}
+
+/* Responsive Typography Adjustments */
+@media (max-width: 768px) {
+    .section-padding {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-title {
+        font-size: 2.75rem !important;
+    }
+}

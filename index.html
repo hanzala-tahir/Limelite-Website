@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Limelite X2 — Display Backpack | 4K Display, Streaming, Built-in Speakers</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- GSAP & Lenis for Smooth Scrolling and Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#bbaa7c",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed-dim": "#c2c4e5",
+                        "on-tertiary-container": "#4a3e1a",
+                        "tertiary-fixed": "#f4e1af",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-fixed-dim": "#e4c451",
+                        "on-surface": "#191c1d",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#5a5c79",
+                        "error": "#ba1a1a",
+                        "primary": "#ef4444",
+                        "primary-fixed": "#dfe0ff",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#46464d",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed": "#ffe17a",
+                        "on-primary-fixed": "#161a32",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed": "#231b00",
+                        "secondary": "#715c00",
+                        "on-tertiary-fixed-variant": "#524621",
+                        "inverse-primary": "#c2c4e5",
+                        "outline": "#77767e",
+                        "tertiary": "#6b5d36",
+                        "surface-container": "#edeeef",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadb",
+                        "outline-variant": "#c7c5ce",
+                        "tertiary-fixed-dim": "#d7c595",
+                        "on-background": "#191c1d",
+                        "on-secondary-fixed-variant": "#554500",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-container": "#ef4444",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "primary-container": "#7f1d1d",
+                        "on-primary-fixed-variant": "#424560",
+                        "on-primary-container": "#aaaccc",
+                        "on-secondary-container": "#766100",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed": "#231b00",
+                        navy: '#1e293b',
+                        yellow: '#ef4444',
+                        dark: '#111827',
+                        gray: '#6B7280',
+                        lightgray: '#F3F4F6'
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "section-padding": "80px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "button": ["Lexend"],
+                        "headline-lg": ["Lexend"],
+                        "body-lg": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "label-bold": ["Lexend"],
+                        "display-xl": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "300" }],
+                        "label-bold": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-xl": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+
+    <!-- Full-screen Navigation Menu -->
+    <div id="side-menu" class="fixed inset-0 z-[100] bg-black flex translate-x-full overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 flex items-center justify-end bg-black">
+            <!-- Mobile Image -->
+            <img src="./People-3.jpeg" class="md:hidden w-full h-full object-cover object-top opacity-100" alt="Background Mobile">
+            <!-- Desktop Image -->
+            <img src="./3-people.jpeg" class="hidden md:block w-full h-full object-cover object-top opacity-100" alt="Background Desktop">
+            
+            <!-- Responsive Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/20 md:from-black/90 via-transparent md:via-black/40 to-transparent"></div>
+        </div>
+        <!-- Close Button -->
+        <button id="close-menu"
+            class="absolute top-8 right-8 md:top-12 md:right-12 w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-yellow hover:text-white hover:border-yellow transition-all duration-500 ease-out z-[110] group">
+            <span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-500 ease-out">close</span>
+        </button>
+
+        <!-- Left Side: Nav Links -->
+        <div class="w-full lg:w-3/5 h-full flex flex-col justify-center px-8 md:px-24 py-12 relative z-10 bg-transparent">
+
+            <nav class="flex flex-col space-y-1 md:space-y-2">
+                <!-- Home -->
+                <a href="work.html" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">01</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Home</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-0.5 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">Back
+                            to start</span>
+                    </div>
+                </a>
+
+                <!-- Our Story -->
+                <a href="work.html#story-section" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">02</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Our
+                            Story</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">The
+                            Limelite Journey</span>
+                    </div>
+                </a>
+
+                <!-- How to Use -->
+                <a href="work.html#faq-section" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">03</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">How
+                            to Use</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">Master
+                            your display</span>
+                    </div>
+                </a>
+
+                <!-- Why Limelite -->
+                <a href="work.html#reels-section" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">04</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Why
+                            Limelite</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">The
+                            Wearable Advantage</span>
+                    </div>
+                </a>
+
+                <!-- Affiliate -->
+                <a href="#" class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">05</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Affiliate</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">Join
+                            our network</span>
+                    </div>
+                </a>
+
+                <!-- Reviews -->
+                <a href="work.html#testimonials-section"
+                    class="menu-link group flex items-baseline space-x-6 opacity-0 translate-y-10">
+                    <span
+                        class="text-white/20 font-black text-lg md:text-xl font-['Lexend'] tracking-tighter transition-colors duration-500">06</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-3xl md:text-5xl font-black text-white group-hover:translate-x-4 transition-transform duration-500 tracking-tighter">Reviews</span>
+                        <span
+                            class="text-[9px] md:text-[10px] text-white/40 uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4">What
+                            they say</span>
+                    </div>
+                </a>
+            </nav>
+
+            <!-- Bottom Socials -->
+            <div class="mt-12 flex items-center space-x-8 opacity-0 translate-y-10" id="menu-footer">
+                <div class="flex space-x-5">
+                    <a href="#" class="text-white/60 hover:text-yellow transition-colors"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white/60 hover:text-yellow transition-colors"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white/60 hover:text-yellow transition-colors"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="h-px w-12 bg-white/10"></div>
+                <p class="text-white/30 text-[10px] uppercase tracking-widest">© 2024 Limelite Studio</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Decorative/Image (Desktop Only) -->
+        <div class="hidden lg:block w-2/5 h-full relative overflow-hidden bg-transparent">
+            <div class="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent z-10"></div>
+        </div>
+
+            <!-- Animated Grid Pattern Overlay -->
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 40px 40px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Navigation -->
+    <div class="fixed top-0 w-full z-50 pt-6 px-6 transition-all duration-500 pointer-events-none" id="navbar-wrapper">
+        <nav class="mx-auto max-w-3xl bg-white/70 backdrop-blur-3xl border border-white/50 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] rounded-2xl md:rounded-full px-6 md:px-8 py-2 flex items-center justify-between pointer-events-auto transition-all duration-500 will-change-transform"
+            id="navbar">
+            <!-- Left: Menu Bar -->
+            <div class="flex-1 flex items-center">
+                <button id="menu-toggle"
+                    class="w-11 h-11 rounded-full border border-gray/10 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all duration-500 ease-out group">
+                    <span
+                        class="material-symbols-outlined text-[24px] group-hover:rotate-90 transition-transform duration-500 ease-out">menu</span>
+                </button>
+            </div>
+
+            <!-- Mid: Brand Logo -->
+            <div class="flex-1 flex justify-center">
+                <a class="text-2xl font-black text-navy tracking-tighter hover:opacity-80 transition-opacity font-['Lexend']"
+                    href="work.html">LIMELITE</a>
+            </div>
+
+            <!-- Right: Icons -->
+            <div class="flex-1 flex items-center justify-end space-x-4">
+                <a href="#"
+                    class="w-11 h-11 rounded-full border border-gray/10 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all duration-500 ease-out group">
+                    <span
+                        class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform duration-500 ease-out">person</span>
+                </a>
+                <a href="#"
+                    class="w-11 h-11 rounded-full border border-gray/10 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all duration-500 ease-out group relative">
+                    <span
+                        class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform duration-500 ease-out">shopping_cart</span>
+                    <span
+                        class="absolute -top-1 -right-1 w-5 h-5 bg-yellow text-white text-[10px] font-bold flex items-center justify-center rounded-full border-2 border-white shadow-sm">0</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+  <!-- ===== PRODUCT HERO (PDP) ===== -->
+  <section class="section pdp bg-surface text-on-background font-body-md" id="product">
+    <div class="container">
+      <div class="pdp__wrap">
+        <!-- Gallery -->
+        <div class="pdp__gallery rv">
+          <div class="pdp__main-img" id="main-img">
+            <div class="glow"></div>
+            <img src="new-hero-5.webp" alt="Limelite X2 Display Backpack" id="main-img-el" fetchpriority="high">
+          </div>
+          <div class="pdp__thumbs" id="thumbs">
+            <div class="pdp__thumb active" data-img="new-hero-5.webp"><img loading="lazy" src="new-hero-5.webp"
+                alt="Front view"></div>
+            <div class="pdp__thumb" data-img="new-hero-2.webp"><img loading="lazy" src="new-hero-2.webp"
+                alt="Side view"></div>
+            <div class="pdp__thumb" data-img="new-hero-4.webp"><img loading="lazy" src="new-hero-4.webp"
+                alt="Studio shot"></div>
+            <div class="pdp__thumb" data-img="new-hero-3.webp"><img loading="lazy" src="new-hero-3.webp"
+                alt="Yoga display"></div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="pdp__info rv">
+          <div class="pdp__badge"><span class="pdp__badge-dot"></span>Now Available — Limited Stock</div>
+          <h1 class="pdp__title font-black text-navy tracking-tighter font-['Lexend']">Limelite X2<br><span class="text-primary italic">Display</span> Backpack</h1>
+          <p class="pdp__subtitle">The future of wearable advertising. Display videos, animations, and live content on a
+            full-view 4K screen — right on your back.</p>
+
+          <div class="pdp__price-row">
+            <span class="pdp__price">$499.00</span>
+            <span class="pdp__price-old">$699.00</span>
+            <span class="pdp__price-save">Save $200.00</span>
+          </div>
+          <p class="pdp__price-note">One-time purchase · Free shipping · No subscriptions</p>
+
+          <a href="#buy" class="btn-buy" id="pdp-buy">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 01-8 0" />
+            </svg>
+            Add to Cart
+          </a>
+          <!-- Win Your Money Back Accordion -->
+          <div class="promo-accordion qa-toggle" id="promo-moneyback">
+            <div class="promo-accordion__head">
+              <span class="promo-accordion__title">Win Your Money Back</span>
+              <span class="promo-accordion__icon">+</span>
+            </div>
+            <div class="promo-accordion__body">
+              <div class="promo-accordion__content">
+                <p><strong>How to win your money back?</strong></p>
+                <ol>
+                  <li>Purchase a Limelite backpack</li>
+                  <li>Post a photo or video wearing your bag on Instagram</li>
+                  <li>Tag @MyLimelite in your post</li>
+                </ol>
+                <p><strong>Pixler 3:</strong> Get a minimum of 5k views and 25 genuine comments within 15 days, you'll
+                  win your money back as a full Limelite purchase credit.</p>
+                <p><strong>Limelite X2:</strong> 10k views 30 comments required.</p>
+                <p>To claim, send us a DM at <strong>@MyLimelite</strong> or email Support@mylimelite.com once your post
+                  qualifies. Terms apply.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Trust micro-strip -->
+          <div class="pdp__trust">
+            <div class="pdp__trust-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              Warranty Included
+            </div>
+            <div class="pdp__trust-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+              Fast Shipping
+            </div>
+            <div class="pdp__trust-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Easy Setup
+            </div>
+          </div>
+
+          <!-- Hero Q&A: whisper right in the product info -->
+          <div class="pdp__qa qa-toggle" id="hero-qa">
+            <div class="pdp__qa-head">
+              <span class="pdp__qa-icon">?</span>
+              <span class="pdp__qa-q">Can I customize what shows on the screen?</span>
+            </div>
+            <div class="pdp__qa-a">Yes — display anything from videos to animations directly from your phone. Full
+              control through the companion app.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEY SPECS STRIP ===== -->
+  <div class="specs-strip">
+    <div class="container" style="max-width:1400px;padding:0;">
+      <div class="specs-strip__inner">
+        <div class="spec-item rv">
+          <div class="spec-item__val">4K</div>
+          <div class="spec-item__lbl">Full-View Display</div>
+        </div>
+        <div class="spec-item rv">
+          <div class="spec-item__val">15.6"</div>
+          <div class="spec-item__lbl">Screen Size</div>
+        </div>
+        <div class="spec-item rv">
+          <div class="spec-item__val">8+ hrs</div>
+          <div class="spec-item__lbl">Battery Life</div>
+        </div>
+        <div class="spec-item rv">
+          <div class="spec-item__val">2.4 kg</div>
+          <div class="spec-item__lbl">Lightweight</div>
+        </div>
+        <div class="spec-item rv">
+          <div class="spec-item__val">IPX4</div>
+          <div class="spec-item__lbl">Water Resistant</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== REELS SECTION ===== -->
+  <section class="section" id="reels" style="padding-top:100px;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px;" class="rv">
+        <span class="sec-label">In Action</span>
+        <h2 class="sec-title reel-header-title">See the X2 on the <span class="text-primary italic">Streets</span></h2>
+        <p class="sec-sub" style="margin:0 auto;">Watch how creators are using the Limelite X2 to stand out.</p>
+      </div>
+      <div class="reels-grid">
+        <!-- Reel 1 -->
+        <div class="reel-card rv">
+           <img src="reel-1.png?v=2" alt="Creative director with backpack in office" class="reel-card__img" loading="lazy">
+           <div class="reel-card__overlay"></div>
+           <button class="reel-card__play" aria-label="Play Reel">
+             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+           </button>
+           <div class="reel-card__info">
+             <div class="reel-card__stat">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+               1.2M
+             </div>
+           </div>
+        </div>
+        <!-- Reel 2 -->
+        <div class="reel-card rv">
+           <img src="reel-2.png?v=2" alt="Tech entrepreneur with backpack at cafe" class="reel-card__img" loading="lazy">
+           <div class="reel-card__overlay"></div>
+           <button class="reel-card__play" aria-label="Play Reel">
+             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+           </button>
+           <div class="reel-card__info">
+             <div class="reel-card__stat">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+               850K
+             </div>
+           </div>
+        </div>
+        <!-- Reel 3 -->
+        <div class="reel-card rv">
+           <img src="reel-3.png?v=2" alt="Professional man walking in city with backpack" class="reel-card__img" loading="lazy">
+           <div class="reel-card__overlay"></div>
+           <button class="reel-card__play" aria-label="Play Reel">
+             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+           </button>
+           <div class="reel-card__info">
+             <div class="reel-card__stat">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+               425K
+             </div>
+           </div>
+        </div>
+        <!-- Reel 4 -->
+        <div class="reel-card rv">
+           <img src="reel-4.png?v=2" alt="Digital nomad at airport with premium tech backpack" class="reel-card__img" loading="lazy">
+           <div class="reel-card__overlay"></div>
+           <button class="reel-card__play" aria-label="Play Reel">
+             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+           </button>
+           <div class="reel-card__info">
+             <div class="reel-card__stat">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+               2.1M
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ===== FEATURE 1: DISPLAY + TECH SETUP Q&A ===== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="feat-row" data-default-img="connectivity.webp">
+        <div class="feat-row__img rv">
+          <img loading="lazy" src="connectivity.webp" alt="Limelite X2 connectivity and display technology"
+            class="feat-row__img-el">
+          <img loading="lazy" src="" alt="" class="feat-row__img-swap" aria-hidden="true">
+          <div class="overlay-glow"></div>
+        </div>
+        <div class="feat-row__text rv">
+          <span class="sec-label">Display &amp; Connectivity</span>
+          <h2 class="sec-title">Stunning 4K.<br><span class="text-primary italic">Effortless</span> Control.</h2>
+          <p class="sec-sub">A full-view IPS display with wide viewing angles. Control everything from your phone,
+            connect via HDMI, or upload directly to onboard storage.</p>
+
+          <!-- 🎯 Tech Setup Q&A — kills confusion early -->
+          <div class="whisper qa-toggle" id="qa-connect" data-swap-img="qa-phone-connect.webp">
+            <span class="whisper__icon">?</span>
+            <div>
+              <div class="whisper__q">Will it connect easily to my phone or devices?</div>
+              <div class="whisper__a">Yes — control everything through the app, HDMI input, or direct storage. No
+                complex setup required.</div>
+            </div>
+          </div>
+          <div class="whisper qa-toggle" id="qa-camera" style="margin-top:8px;" data-swap-img="hero-backpack.webp">
+            <span class="whisper__icon">?</span>
+            <div>
+              <div class="whisper__q">Can I use my camera or drone footage?</div>
+              <div class="whisper__a">Absolutely. Plug in via HDMI or upload directly and start playing instantly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ===== FEATURE 2: MEDIA CAPABILITY + Q&A ===== -->
+  <section class="section" id="media">
+    <div class="container">
+      <div class="feat-row feat-row--reverse" data-default-img="lifestyle-urban.webp">
+        <div class="feat-row__img rv">
+          <img loading="lazy" src="lifestyle-urban.webp" alt="Limelite X2 in action — urban nightlife"
+            class="feat-row__img-el">
+          <img loading="lazy" src="" alt="" class="feat-row__img-swap" aria-hidden="true">
+          <div class="overlay-glow"></div>
+        </div>
+        <div class="feat-row__text rv">
+          <span class="sec-label">Media Power</span>
+          <h2 class="sec-title">Your Content.<br><span class="text-primary italic">Your Canvas.</span></h2>
+          <p class="sec-sub">Stream videos, play animations, display branded content. Built-in speakers bring your
+           visuals to life — no extra gear needed.</p>
+
+          <!-- 🎯 Media Capability Q&A — sells the power -->
+          <div class="whisper qa-toggle" id="qa-video" data-swap-img="hero-dark.webp">
+            <span class="whisper__icon">?</span>
+            <div>
+              <div class="whisper__q">Can it play videos or just images?</div>
+              <div class="whisper__a">Play short videos, animations, or even stream content directly from apps like
+                YouTube.</div>
+            </div>
+          </div>
+          <div class="whisper qa-toggle" id="qa-speakers" style="margin-top:8px;" data-swap-img="side-view.webp">
+            <span class="whisper__icon">?</span>
+            <div>
+              <div class="whisper__q">Do I need external speakers?</div>
+              <div class="whisper__a">Built-in speakers on both sides bring your content to life — no extra gear needed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ===== FEATURE 3: BUILD + DURABILITY Q&A ===== -->
+  <section class="section" id="build">
+    <div class="container">
+      <div class="feat-row" data-default-img="detail-materials.webp">
+        <div class="feat-row__img rv">
+          <img loading="lazy" src="detail-materials.webp" alt="Limelite X2 premium materials close-up"
+            class="feat-row__img-el">
+          <img loading="lazy" src="" alt="" class="feat-row__img-swap" aria-hidden="true">
+          <div class="overlay-glow"></div>
+        </div>
+        <div class="feat-row__text rv">
+          <span class="sec-label">Build Quality</span>
+          <h2 class="sec-title">Built to Move.<br><span class="text-primary italic">Built to Last.</span></h2>
+          <p class="sec-sub">Premium water-resistant materials, padded ergonomic straps, and a reinforced screen
+            housing. Engineered for people who don't sit still.</p>
+
+          <!-- 🎯 Durability Q&A — removes fear -->
+          <div class="whisper whisper--purple qa-toggle" id="qa-safe" data-swap-img="hero-backpack.webp">
+            <span class="whisper__icon">?</span>
+            <div>
+              <div class="whisper__q">Is the screen safe for daily use?</div>
+              <div class="whisper__a">Designed for movement — with improved screen protection and a travel-ready build.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ===== WHAT'S IN THE BOX ===== -->
+  <section class="section inbox" id="box">
+    <div class="container">
+      <div style="text-align:center;" class="rv">
+        <span class="sec-label">Package</span>
+        <h2 class="sec-title">What's in the Box</h2>
+        <p class="sec-sub" style="margin:0 auto;">Everything you need to get started — no extra purchases required.</p>
+      </div>
+      <div class="inbox__grid">
+        <div class="inbox-item rv">
+          <div class="inbox-item__icon">🎒</div>
+          <div class="inbox-item__name">Limelite X2 Backpack</div>
+          <div class="inbox-item__desc">With integrated 15.6" 4K LED display</div>
+        </div>
+        <div class="inbox-item rv">
+          <div class="inbox-item__icon">🔌</div>
+          <div class="inbox-item__name">Charging Cable</div>
+          <div class="inbox-item__desc">USB-C fast charging cable included</div>
+        </div>
+        <div class="inbox-item rv">
+          <div class="inbox-item__icon">📖</div>
+          <div class="inbox-item__name">Quick Start Guide</div>
+          <div class="inbox-item__desc">Step-by-step setup instructions</div>
+        </div>
+        <div class="inbox-item rv">
+          <div class="inbox-item__icon">📦</div>
+          <div class="inbox-item__name">Premium Packaging</div>
+          <div class="inbox-item__desc">Gift-ready red box with accessories</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS (PROFESSIONAL E-COMMERCE STYLE) ===== -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="reviews-wrap">
+
+        <!-- Left: Overall Rating Summary -->
+        <div class="reviews-summary rv">
+          <h2 class="sec-title" style="margin-bottom:8px; font-size:1.8rem;">Customer Reviews</h2>
+          <div class="reviews-summary__flex">
+            <div class="reviews-summary__score">4.9</div>
+            <div>
+              <div class="reviews-summary__stars">
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <div class="reviews-summary__count">128 global ratings</div>
+            </div>
+          </div>
+
+          <div class="reviews-bars">
+            <div class="reviews-bar"><span>5 star</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width:92%"></div>
+              </div><span>92%</span>
+            </div>
+            <div class="reviews-bar"><span>4 star</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width:6%"></div>
+              </div><span>6%</span>
+            </div>
+            <div class="reviews-bar"><span>3 star</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width:2%"></div>
+              </div><span>2%</span>
+            </div>
+            <div class="reviews-bar dim"><span>2 star</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width:0%"></div>
+              </div><span>0%</span>
+            </div>
+            <div class="reviews-bar dim"><span>1 star</span>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width:0%"></div>
+              </div><span>0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Real Review List -->
+        <div class="reviews-list">
+
+          <!-- Review 1 -->
+          <div class="review-pro rv">
+            <div class="review-pro__header">
+              <div class="review-pro__avatar">JD</div>
+              <div class="review-pro__meta">
+                <div class="review-pro__name">James D.</div>
+                <div class="review-pro__verified"><svg viewBox="0 0 24 24"><polygon points="20 6 9 17 4 12" fill="currentColor"/></svg> Verified Purchase</div>
+              </div>
+            </div>
+            <div class="review-pro__title-row">
+              <div class="review-pro__stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              </div>
+              <h4 class="review-pro__title">Took it to Japan, screen was a massive conversation starter!</h4>
+            </div>
+            <div class="review-pro__date">Reviewed in the United States on November 12, 2025</div>
+            <div class="review-pro__body">
+              <p>I was hesitant about the price at first, but honestly, it's worth every penny. I brought this on a trip to Tokyo and everywhere I went, people were asking me about it. The app is super easy to use, I was casting cool cyberpunk animations straight from my phone to the bag while walking through the airport. The bag itself is also incredibly sturdy and fit my camera gear perfectly.</p>
+            </div>
+            <div class="review-gallery">
+              <img src="rev1_1.png" alt="Customer photo of backpack at airport" loading="lazy">
+              <img src="rev1_2.png" alt="Customer photo close up of screen" loading="lazy">
+              <img src="rev1_3.png" alt="Customer photo wearing backpack" loading="lazy">
+            </div>
+            <button class="review-pro__helpful">Helpful (241)</button>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-pro rv">
+            <div class="review-pro__header">
+              <div class="review-pro__avatar blue">SM</div>
+              <div class="review-pro__meta">
+                <div class="review-pro__name">Sarah M.</div>
+                <div class="review-pro__verified"><svg viewBox="0 0 24 24"><polygon points="20 6 9 17 4 12" fill="currentColor"/></svg> Verified Purchase</div>
+              </div>
+            </div>
+            <div class="review-pro__title-row">
+              <div class="review-pro__stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              </div>
+              <h4 class="review-pro__title">Perfect for my daily commute, gets noticed.</h4>
+            </div>
+            <div class="review-pro__date">Reviewed in the United Kingdom on October 28, 2025</div>
+            <div class="review-pro__body">
+              <p>I commute by train every day and wanted something that stood out but still looked professional enough for my tech office. The screen is insanely bright, even during the day. It got caught in a light drizzle last week and the water beaded right off, completely waterproof as advertised. Great buy if you want to stand out at the coffee shop.</p>
+            </div>
+            <div class="review-gallery">
+              <img src="rev2_1.png" alt="Backpack at coffee shop" loading="lazy">
+              <img src="rev2_2.png" alt="Close up of waterproof material" loading="lazy">
+              <img src="rev2_3.png" alt="Backpack on subway" loading="lazy">
+            </div>
+            <button class="review-pro__helpful">Helpful (89)</button>
+          </div>
+
+          <!-- Review 3 (Hidden) -->
+          <div class="review-pro hidden-review">
+            <div class="review-pro__header">
+              <div class="review-pro__avatar" style="background:#4ade80; border-color:#22c55e;">AK</div>
+              <div class="review-pro__meta">
+                <div class="review-pro__name">Alex K.</div>
+                <div class="review-pro__verified"><svg viewBox="0 0 24 24"><polygon points="20 6 9 17 4 12" fill="currentColor"/></svg> Verified Purchase</div>
+              </div>
+            </div>
+            <div class="review-pro__title-row">
+              <div class="review-pro__stars">
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="none" stroke="#FFA41C" stroke-width="2"/></svg>
+              </div>
+              <h4 class="review-pro__title">Amazing for night riding, highly visible!</h4>
+            </div>
+            <div class="review-pro__date">Reviewed in Canada on August 4, 2025</div>
+            <div class="review-pro__body">
+              <p>I bought this mainly for the safety aspect while riding my bike at night in the city. The display is incredibly bright. I programmed it to show a red flashing hazard sign and cars give me way more room now. The only reason for 4 stars instead of 5 is I wish the app had more pre-made safety animations.</p>
+            </div>
+            <div class="review-gallery">
+              <img src="rev3_1.png" alt="Riding bike at night" loading="lazy">
+              <img src="rev3_2.png" alt="Close up of red display" loading="lazy">
+              <img src="rev3_3.png" alt="Backpack next to bike wheel" loading="lazy">
+            </div>
+            <button class="review-pro__helpful">Helpful (55)</button>
+          </div>
+
+          <button id="load-more-reviews" class="btn-load-more">View More Reviews</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ===== VALUE COMPARISON + VALUE Q&A ===== -->
+  <section class="section value" id="compare">
+    <div class="container">
+      <div class="value__wrap">
+        <div class="rv">
+          <span class="sec-label">Comparison</span>
+          <h2 class="sec-title">Why Limelite X2?</h2>
+          <p class="sec-sub">Not all LED backpacks are created equal. See how the X2 stacks up against typical budget
+            alternatives.</p>
+
+          <!-- 🎯 Value Positioning Q&A — kills competitor comparison -->
+          <div class="whisper whisper--red qa-toggle" id="qa-cheap" style="margin-top:24px;">
+            <span class="whisper__icon">?</span>
+            <div>
+              <div class="whisper__q">Why not just buy a cheaper $50 version?</div>
+              <div class="whisper__a">Most low-cost versions use low-resolution panels with limited functionality. The
+                X2 features a full-view 4K display, streaming capability, and premium build quality designed for
+                real-world use.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rv">
+          <table class="value__table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Budget $50</th>
+                <th>Limelite X2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Display Resolution</td>
+                <td class="dim">Low-res LED dots</td>
+                <td class="highlight">Full 4K IPS</td>
+              </tr>
+              <tr>
+                <td>Video Playback</td>
+                <td class="dim">None / GIFs only</td>
+                <td class="highlight">Full video + streaming</td>
+              </tr>
+              <tr>
+                <td>Audio</td>
+                <td class="dim">No speakers</td>
+                <td class="highlight">Built-in dual speakers</td>
+              </tr>
+              <tr>
+                <td>Control</td>
+                <td class="dim">Basic app</td>
+                <td class="highlight">App + HDMI + Storage</td>
+              </tr>
+              <tr>
+                <td>Battery</td>
+                <td class="dim">2-3 hours</td>
+                <td class="highlight">8+ hours</td>
+              </tr>
+              <tr>
+                <td>Water Resistance</td>
+                <td class="dim">None</td>
+                <td class="highlight">IPX4 rated</td>
+              </tr>
+              <tr>
+                <td>Build Material</td>
+                <td class="dim">Thin nylon</td>
+                <td class="highlight">Premium reinforced</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===== TRUST STRIP + TROUBLESHOOTING Q&A ===== -->
+  <div class="trust-strip">
+    <div class="container" style="max-width:1400px;padding:0;">
+      <div class="trust-strip__inner">
+        <div class="trust-item rv">
+          <div class="trust-item__icon">📦</div>
+          <div class="trust-item__title">Fast Shipping</div>
+          <div class="trust-item__desc">Tracked delivery with premium packaging</div>
+        </div>
+        <div class="trust-item rv">
+          <div class="trust-item__icon">🛡️</div>
+          <div class="trust-item__title">Warranty Included</div>
+          <div class="trust-item__desc">Backed by our product warranty</div>
+        </div>
+        <div class="trust-item rv">
+          <div class="trust-item__icon">⚡</div>
+          <div class="trust-item__title">Easy Setup</div>
+          <div class="trust-item__desc">Up and running in under 5 minutes</div>
+        </div>
+        <div class="trust-item rv">
+          <div class="trust-item__icon">💬</div>
+          <div class="trust-item__title">Support</div>
+          <div class="trust-item__desc">Help when you need it</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎯 Troubleshooting Confidence — hidden trust builder -->
+  <section class="section" style="padding:40px 0 60px;">
+    <div class="container trust__whisper">
+      <div class="whisper whisper--purple qa-toggle rv" id="qa-setup">
+        <span class="whisper__icon">?</span>
+        <div>
+          <div class="whisper__q">What if I face setup issues?</div>
+          <div class="whisper__a">Step-by-step setup makes it simple — plus support is available 24/7 via our help center.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-navy text-white pt-20 pb-10 font-['Poppins']">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <h3 class="text-2xl font-black text-white mb-6 tracking-tighter font-['Lexend']">LIMELITE</h3>
+                <p class="text-white/60 text-sm leading-relaxed mb-8">
+                    The future of wearable advertising. Empowering brands to shine in the physical world.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-navy transition-all duration-500 ease-out"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-navy transition-all duration-500 ease-out"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-navy transition-all duration-500 ease-out"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-8">Shop</h4>
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="text-white/60 text-sm hover:text-primary transition-colors">X2 Backpack</a>
+                    </li>
+                    <li><a href="index2.html" class="text-white/60 text-sm hover:text-primary transition-colors">Pixler 3</a>
+                    </li>
+                    <li><a href="#" class="text-white/60 text-sm hover:text-primary transition-colors">Power
+                            Solutions</a></li>
+                    <li><a href="#" class="text-white/60 text-sm hover:text-primary transition-colors">Accessories</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-8">Company</h4>
+                <ul class="space-y-4">
+                    <li><a href="work.html#story-section" class="text-white/60 text-sm hover:text-primary transition-colors">Our Story</a>
+                    </li>
+                    <li><a href="#" class="text-white/60 text-sm hover:text-primary transition-colors">Ambassadors</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-white/60 text-sm hover:text-primary transition-colors">Sustainability</a></li>
+                    <li><a href="#" class="text-white/60 text-sm hover:text-primary transition-colors">Careers</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-xs uppercase tracking-widest mb-8">Support</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-white/60 text-sm hover:text-primary transition-colors">Help Center</a>
+                    </li>
+                    <li><a href="#" class="text-white/60 text-sm hover:text-primary transition-colors">Shipping</a></li>
+                    <li><a href="#" class="text-white/60 text-sm hover:text-primary transition-colors">Returns</a></li>
+                    <li><a href="#" class="text-white/60 text-sm hover:text-primary transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-6 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-white/40 text-xs">© 2024 Limelite. All rights reserved.</p>
+            <div class="flex gap-8">
+                <a href="#"
+                    class="text-white/40 text-[10px] uppercase tracking-widest hover:text-white transition-colors">Privacy
+                    Policy</a>
+                <a href="#"
+                    class="text-white/40 text-[10px] uppercase tracking-widest hover:text-white transition-colors">Terms
+                    of Service</a>
+            </div>
+        </div>
+    </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Lenis Smooth Scroll
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // GSAP Initialization
+    gsap.registerPlugin(ScrollTrigger);
+
+    // --- Side Menu Logic ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const sideMenu = document.getElementById('side-menu');
+    const menuLinks = document.querySelectorAll('.menu-link');
+    const menuHeader = document.getElementById('menu-header');
+    const menuFooter = document.getElementById('menu-footer');
+    const menuFeatured = document.getElementById('menu-featured');
+
+    const menuTL = gsap.timeline({ paused: true });
+
+    // Smooth Side Menu Animation
+    menuTL.to(sideMenu, {
+        x: 0,
+        duration: 0.9,
+        ease: "expo.inOut"
+    })
+    .fromTo(menuLinks, {
+        y: 40,
+        opacity: 0
+    }, {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.06,
+        ease: "power4.out"
+    }, "-=0.5");
+
+    if (menuFooter) {
+        menuTL.fromTo(menuFooter,
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" },
+            "-=0.5"
+        );
+    }
+
+    menuToggle.addEventListener('click', () => {
+        menuTL.timeScale(1).play();
+        lenis.stop();
+    });
+
+    closeMenu.addEventListener('click', () => {
+        menuTL.timeScale(1.4).reverse();
+        lenis.start();
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuTL.timeScale(1.4).reverse();
+            lenis.start();
+        });
+    });
+
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    const navbarWrapper = document.getElementById('navbar-wrapper');
+
+    lenis.on('scroll', ({ scroll }) => {
+        if (scroll > 50) {
+            navbar.classList.add('py-1.5', 'bg-white/80', 'backdrop-blur-3xl', 'shadow-2xl');
+            navbar.classList.remove('py-2', 'bg-white/70', 'backdrop-blur-3xl');
+            navbarWrapper.classList.remove('pt-6');
+            navbarWrapper.classList.add('pt-2');
+        } else {
+            navbar.classList.remove('py-1.5', 'bg-white/80', 'backdrop-blur-3xl', 'shadow-2xl');
+            navbar.classList.add('py-2', 'bg-white/70', 'backdrop-blur-3xl');
+            navbarWrapper.classList.add('pt-6');
+            navbarWrapper.classList.remove('pt-2');
+        }
+    });
+
+    /* ---- Gallery thumbnail switcher ---- */
+    const mainImg = document.getElementById('main-img-el');
+    const thumbs = document.querySelectorAll('.pdp__thumb');
+    let autoPlayInterval;
+    let currentThumbIndex = 0;
+
+    const galleryCache = {};
+    thumbs.forEach(t => {
+      const src = t.dataset.img;
+      const img = new Image();
+      img.src = src;
+      galleryCache[src] = img;
+    });
+
+    function updateGalleryImage(index) {
+      const t = thumbs[index];
+      thumbs.forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      const newSrc = t.dataset.img;
+
+      if (galleryCache[newSrc] && galleryCache[newSrc].complete) {
+        mainImg.style.opacity = '0';
+        requestAnimationFrame(() => {
+          mainImg.src = newSrc;
+          requestAnimationFrame(() => { mainImg.style.opacity = '1'; });
+        });
+      } else {
+        mainImg.style.opacity = '0';
+        const loader = new Image();
+        loader.onload = () => {
+          mainImg.src = newSrc;
+          requestAnimationFrame(() => { mainImg.style.opacity = '1'; });
+        };
+        loader.src = newSrc;
+      }
+      currentThumbIndex = index;
+    }
+
+    thumbs.forEach((t, i) => {
+      t.addEventListener('click', () => {
+        clearInterval(autoPlayInterval);
+        updateGalleryImage(i);
+      });
+    });
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(() => {
+        let nextIndex = (currentThumbIndex + 1) % thumbs.length;
+        updateGalleryImage(nextIndex);
+      }, 4000);
+    }
+
+    startAutoPlay();
+
+    /* ---- Q&A toggle with Seamless Crossfade ---- */
+    document.querySelectorAll('.qa-toggle').forEach(el => {
+      const featRow = el.closest('.feat-row');
+      const baseImg = featRow ? featRow.querySelector('.feat-row__img-el') : null;
+      const swapImgEl = featRow ? featRow.querySelector('.feat-row__img-swap') : null;
+      const defaultImg = featRow ? featRow.dataset.defaultImg : null;
+      const swapImgSrc = el.dataset.swapImg;
+
+      const updateImg = (src, isReset = false) => {
+        if (!baseImg || !swapImgEl || !src) return;
+
+        if (isReset) {
+          // Fade out the overlay to reveal the base
+          swapImgEl.style.opacity = '0';
+          baseImg.style.opacity = '1';
+        } else {
+          // Fade in the overlay over the base
+          swapImgEl.src = src;
+          swapImgEl.style.opacity = '1';
+          baseImg.style.opacity = '0.3'; // Keep base slightly visible to prevent any gap
+        }
+      };
+
+      // Hover Support
+      el.addEventListener('mouseenter', () => {
+        if (swapImgSrc) updateImg(swapImgSrc);
+      });
+
+      el.addEventListener('mouseleave', () => {
+        if (!el.classList.contains('on')) {
+          updateImg(defaultImg, true);
+        }
+      });
+
+      // Click Support
+      el.addEventListener('click', () => {
+        const container = el.closest('.container');
+        const parentNode = featRow || container;
+        
+        if (parentNode) {
+          parentNode.querySelectorAll('.qa-toggle').forEach(sibling => {
+            if (sibling !== el) {
+                sibling.classList.remove('on');
+            }
+          });
+        }
+
+        el.classList.toggle('on');
+        
+        if (el.classList.contains('on')) {
+          if (swapImgSrc) updateImg(swapImgSrc);
+        } else {
+          updateImg(defaultImg, true);
+        }
+      });
+    });
+
+    /* ---- Smooth scroll with offset ---- */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id === '#' || id.startsWith('work.html')) return;
+        e.preventDefault();
+        const target = document.querySelector(id);
+        if (target) {
+          const top = target.getBoundingClientRect().top + lenis.scroll - 80;
+          lenis.scrollTo(top);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

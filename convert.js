@@ -1,0 +1,1 @@
+const sharp = require('sharp'); const fs = require('fs'); const path = require('path'); const dir = '.'; fs.readdirSync(dir).forEach(file => { if (file.endsWith('.png')) { const p = path.join(dir, file); sharp(p).webp({quality: 80}).toFile(p.replace('.png', '.webp')).then(() => console.log('Converted', file)); } });
